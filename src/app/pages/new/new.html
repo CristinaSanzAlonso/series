@@ -1,0 +1,48 @@
+<h2 class="mb-3 text-center p-5">AÑADE UNA SERIE</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()" 
+      class="card p-4 shadow mx-auto" style="max-width: 600px;">
+
+  <div class="mb-3">
+    <label class="form-label">Título</label>
+    <input type="text" class="form-control" formControlName="title">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Channel</label>
+    <input type="text" class="form-control" formControlName="channel">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Rating</label>
+    <input type="number" class="form-control" formControlName="rating">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Creator</label>
+    <input type="text" class="form-control" formControlName="creator">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Dates</label>
+    <input type="text" class="form-control" formControlName="dates">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Image URL</label>
+    <input type="text" class="form-control" formControlName="image">
+  </div>
+
+
+  <div class="d-flex justify-content-between mt-4">
+    <button class="btn btn-success px-4" type="submit" [disabled]="form.invalid">
+      Guardar
+    </button>
+
+    <a routerLink="/home" class="btn btn-secondary px-4">
+      Cancelar
+    </a>
+  </div>
+
+</form>
+
