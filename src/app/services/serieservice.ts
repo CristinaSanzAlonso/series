@@ -6,6 +6,8 @@ import { Serie } from '../models/serie';
 @Injectable({
   providedIn: 'root', //este servicio estará disponible en toda la aplicación 
 })
+
+//el servicio se encarga de la lógica de la app, utiliza httpClient para los metodos crud
 export class SerieService {
   private readonly url = 'https://peticiones.online/api/series'; //URL de la API
   
