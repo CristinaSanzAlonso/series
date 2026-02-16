@@ -8,6 +8,7 @@
   </a>
 </div>
 
+<!--Recorremos la lista de series, pintaremos una tarjeta por cada una usando el id como identificador-->
 <div class="row g-4 p-5">
   @for (s of series$ | async; track s.id) {
     <div class="col-md-4">

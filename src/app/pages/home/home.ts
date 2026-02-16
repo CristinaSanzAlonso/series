@@ -11,6 +11,8 @@ import { RouterLink } from '@angular/router';
   imports: [AsyncPipe, RouterLink],
   templateUrl: './home.html',
 })
+
+//Clase que carga las series del servicio y se encarga de escuchar los cambios y mostrarlos
 export class HomeComponent {
 
   series$: Observable<Serie[]>;
