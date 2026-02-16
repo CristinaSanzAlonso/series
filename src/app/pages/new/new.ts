@@ -11,15 +11,18 @@ import { of, switchMap } from 'rxjs';
   imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './new.html',
 })
+
+//Esta clase gestiona el formulario para realiar un post de una serie en al API, el post no será real porque la APi es falsa
 export class NewComponent {
 
-  //si hay un serietId editará y sino añadirá la serie
   serietId?: number; 
   
   form = new FormGroup({ 
+    //además de ser obligatorio el titulo tiene que tener 3 caracteres mínimo
     title: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.minLength(3)] }), 
     channel: new FormControl('', { nonNullable: true, validators: [Validators.required] }), 
-    rating: new FormControl<number | null>(null, { validators: [Validators.required, Validators.min(0), Validators.max(10)] }), 
+    //comienza en cero y como validación el valor iene que estar entre 0 y 10
+    rating: new FormControl<number | null>(0, { validators: [Validators.required, Validators.min(0), Validators.max(10)] }), 
     creator: new FormControl('', { nonNullable: true, validators: [Validators.required] }), 
     dates: new FormControl('', { nonNullable: true, validators: [Validators.required] }), 
     image: new FormControl('', { nonNullable: true, validators: [Validators.required] }), 
